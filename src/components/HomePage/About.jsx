@@ -1,6 +1,6 @@
 import React from "react";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
+  import CountUp from "react-countup";
+  import { useInView } from "react-intersection-observer";
 
 // Replace this with your image path
 import AboutImg from "../../assets/homePage/about.png";

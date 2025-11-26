@@ -1,41 +1,51 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Infrastructure from "./pages/services/Infrastructure";
-// import Mining from "./pages/services/Mining";
-// import Civil from "./pages/services/Civil";
-// import PlantationResort from "./pages/services/PlantationResort";
-// import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
+import FireLoader from "./components/ui/Loader";
 
-function App() {
+/* ✅ Route Loader Wrapper */
+function AppContent() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1200); // loader duration for every route change
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]); // ✅ runs on EVERY navigation
+
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} />
-            <Route
-              path="/services/infrastructure"
-              element={<Infrastructure />}
-            />
-            <Route path="/services/mining" element={<Mining />} />
-            <Route path="/services/civil" element={<Civil />} />
-            <Route
-              path="/services/plantation-resort"
-              element={<PlantationResort />}
-            />
-            <Route path="/contact" element={<Contact />} /> */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      {loading && <FireLoader />}
+
+      {!loading && (
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}

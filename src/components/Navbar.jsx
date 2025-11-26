@@ -1,113 +1,235 @@
-import React, { useState } from "react";
-import { FiPhone, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import Logo from "../assets/logo.png";
-import Icon from "./ui/icon";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { FiChevronDown, FiMenu, FiX, FiPhone } from "react-icons/fi";
+import logo from "../assets/logo.png"; // your logo
+import Loader from "./ui/Loader";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
+  const [serviceClicked, setServiceClicked] = useState(false);
+
+  const serviceRef = useRef(null);
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (serviceRef.current && !serviceRef.current.contains(event.target)) {
+        setServiceOpen(false);
+        setServiceClicked(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-80 flex justify-center mt-3">
-      <div className="bg-white text-black rounded-full w-full mx-[160px] px-2 py-1 flex items-center justify-between shadow-lg">
-        {/* Logo */}
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav
+        className="
+      bg-white shadow-md
+      mx-3 sm:mx-6 md:mx-10 lg:mx-30
+      mt-4
+      rounded-full
+      px-4 sm:px-4 md:px-6 lg:px-6
+      py-3
+      flex items-center justify-between
+    "
+      >
+        {" "}
+        {/* LOGO */}
         <div className="flex items-center gap-2">
-          <img src={Logo} alt="Logo" className="w-14 h-auto" />
+          <img src={logo} alt="Logo" className="w-10 h-10" />
+          <span className="font-bold text-lg">Kashmir</span>
         </div>
-
-        {/* Desktop Menu (only show on lg and above) */}
-        <ul className="hidden lg:flex items-center gap-12 text-[14px] font-medium">
-          <li className="hover:text-[#FFB800] cursor-pointer transition">
-            Home
-          </li>
-          <li className="hover:text-[#FFB800] cursor-pointer transition">
-            About
+        {/* DESKTOP MENU */}
+        <ul className="hidden lg:flex items-center gap-10 font-medium text-gray-800">
+          <li>
+            <Link to="/" className="hover:text-[#F4B324] transition">
+              Home
+            </Link>
           </li>
 
-          {/* SERVICES Dropdown */}
-          <li className="relative group cursor-pointer">
-            <div className="flex items-center gap-1 hover:text-[#FFB800] transition">
+          <li>
+            <Link to="/about" className="hover:text-[#F4B324] transition">
+              About
+            </Link>
+          </li>
+
+          {/* SERVICES DROPDOWN */}
+          <li
+            ref={serviceRef}
+            className="relative cursor-pointer"
+            onMouseEnter={() => {
+              if (!serviceClicked) setServiceOpen(true);
+            }}
+            onMouseLeave={() => {
+              if (!serviceClicked) setServiceOpen(false);
+            }}
+          >
+            {/* BUTTON */}
+            <div
+              onClick={() => {
+                setServiceOpen(true);
+                setServiceClicked(true);
+              }}
+              className="flex items-center gap-1 hover:text-[#F4B324] transition select-none"
+            >
               Services <FiChevronDown />
             </div>
 
-            <div className="absolute hidden group-hover:block top-8 left-0 bg-white text-black rounded-md shadow-lg w-44 py-3 transition z-50">
-              <p className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Infrastructure
-              </p>
-              <p className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Civil Mining
-              </p>
-              <p className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Plantation
-              </p>
-            </div>
+            {/* DROPDOWN */}
+            {serviceOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-xl overflow-hidden z-50">
+                <Link
+                  to="/services/infrastructure"
+                  onClick={() => {
+                    setServiceOpen(false);
+                    setServiceClicked(false);
+                  }}
+                  className="block px-5 py-3 hover:bg-[#F4B324] hover:text-black transition"
+                >
+                  Infrastructure
+                </Link>
+
+                <Link
+                  to="/services/civil"
+                  onClick={() => {
+                    setServiceOpen(false);
+                    setServiceClicked(false);
+                  }}
+                  className="block px-5 py-3 hover:bg-[#F4B324] hover:text-black transition"
+                >
+                  Civil
+                </Link>
+
+                <Link
+                  to="/services/plantation"
+                  onClick={() => {
+                    setServiceOpen(false);
+                    setServiceClicked(false);
+                  }}
+                  className="block px-5 py-3 hover:bg-[#F4B324] hover:text-black transition"
+                >
+                  Plantation & Resort
+                </Link>
+
+                <Link
+                  to="/services/mining"
+                  onClick={() => {
+                    setServiceOpen(false);
+                    setServiceClicked(false);
+                  }}
+                  className="block px-5 py-3 hover:bg-[#F4B324] hover:text-black transition"
+                >
+                  Mining
+                </Link>
+              </div>
+            )}
           </li>
 
-          <li className="hover:text-[#FFB800] cursor-pointer transition">
-            Contact Us
+          <li>
+            <Link to="/contact" className="hover:text-[#F4B324] transition">
+              Contact Us
+            </Link>
           </li>
         </ul>
-
-        {/* Desktop Call Button (lg only) */}
-        <button className="hidden lg:flex items-center gap-2 bg-[#FFB800] text-black font-semibold px-6 py-3 rounded-full shadow hover:bg-yellow-400 transition cursor-pointer">
-          <Icon name="phone" />
-          Call Us
-        </button>
-
-        {/* Hamburger (show on mobile + tablet = md and below) */}
-        <button
-          className="lg:hidden text-3xl"
-          onClick={() => setMobileOpen(!mobileOpen)}
+        {/* CALL BUTTON */}
+        <a
+          href="tel:+919823000888"
+          className="hidden lg:flex items-center gap-2 bg-[#F4B324] text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition"
         >
-          {mobileOpen ? <FiX /> : <FiMenu />}
+          <FiPhone /> Call Us
+        </a>
+        {/* MOBILE MENU BUTTON */}
+        <button
+          className="lg:hidden text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile + Tablet Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-black text-white px-10 py-5 rounded-b-3xl mx-[80px] w-full">
-          <ul className="flex flex-col gap-6 text-lg font-medium">
-            <li className="hover:text-[#FFB800] cursor-pointer">Home</li>
-            <li className="hover:text-[#FFB800] cursor-pointer">About</li>
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="lg:hidden bg-white shadow-md px-6 py-6 space-y-5 text-center rounded-b-2xl">
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="block font-medium"
+          >
+            Home
+          </Link>
 
-            {/* Mobile dropdown */}
-            <div>
-              <div
-                className="flex items-center justify-between cursor-pointer hover:text-[#FFB800]"
-                onClick={() => setServiceOpen(!serviceOpen)}
-              >
-                <span>Services</span>
-                <FiChevronDown
-                  className={
-                    serviceOpen ? "rotate-180 transition" : "transition"
-                  }
-                />
-              </div>
+          <Link
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className="block font-medium"
+          >
+            About
+          </Link>
 
-              {serviceOpen && (
-                <div className="ml-4 mt-3 flex flex-col gap-3 text-gray-300">
-                  <p className="hover:text-[#FFB800] cursor-pointer">
-                    Infrastructure
-                  </p>
-                  <p className="hover:text-[#FFB800] cursor-pointer">
-                    Civil Mining
-                  </p>
-                  <p className="hover:text-[#FFB800] cursor-pointer">
-                    Plantation
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <li className="hover:text-[#FFB800] cursor-pointer">Contact Us</li>
-
-            {/* Mobile Call Button */}
-            <button className="bg-[#FFB800] text-black font-semibold px-6 py-3 rounded-full shadow hover:bg-yellow-400 transition flex items-center gap-2">
-              <FiPhone className="text-xl" /> Call Us
+          {/* ✅ MOBILE SERVICES */}
+          <div className="flex flex-col items-center">
+            <button
+              onClick={() => setServiceOpen(!serviceOpen)}
+              className="flex items-center justify-center gap-2 font-medium"
+            >
+              Services <FiChevronDown />
             </button>
-          </ul>
+
+            {serviceOpen && (
+              <div className="mt-3 space-y-2 text-sm text-center">
+                <Link
+                  to="/services/infrastructure"
+                  onClick={() => setMenuOpen(false)}
+                  className="block"
+                >
+                  Infrastructure
+                </Link>
+
+                <Link
+                  to="/services/civil"
+                  onClick={() => setMenuOpen(false)}
+                  className="block"
+                >
+                  Civil
+                </Link>
+
+                <Link
+                  to="/services/plantation"
+                  onClick={() => setMenuOpen(false)}
+                  className="block"
+                >
+                  Plantation & Resort
+                </Link>
+
+                <Link
+                  to="/services/mining"
+                  onClick={() => setMenuOpen(false)}
+                  className="block"
+                >
+                  Mining
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="block font-medium"
+          >
+            Contact Us
+          </Link>
+
+          <a
+            href="tel:+919823000888"
+            className="flex items-center justify-center gap-2 bg-[#F4B324] text-black font-semibold py-2 px-6 rounded-full mx-auto w-fit"
+          >
+            <FiPhone /> Call Us
+          </a>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

@@ -10,82 +10,90 @@ export default function ContactUs() {
         GET IN TOUCH
       </h1>
       {/* SUBTEXT */}
-      <p className="max-w-6xl text-[#3E3E3E] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+      <p className="max-w-6xl  text-[#3E3E3E] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
         Got a project in mind? Reach out to us, we’re here to help you build it
         right. Let’s bring your vision to life.
       </p>
       {/* MAIN GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-2  mt-10">
-        {/* LEFT IMAGES */}
-        <div className="relative flex justify-center lg:justify-start shadow-2xl rounded-3xl  ">
-          {/* BIG IMAGE */}
+      {/* MAIN GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-10 items-center">
+        {/* LEFT IMAGE */}
+        <div className="relative flex justify-center lg:justify-start w-full">
           <img
             src={img1}
             alt="project"
-            className="rounded-3xl w-full max-w-[800px] h-[320px] sm:h-[380px] md:h-[450px] lg:h-[600px]  object-fill"
+            className="
+        rounded-3xl w-full 
+        h-[220px] sm:h-[320px] md:h-[400px] lg:h-[560px]
+        object-cover shadow-2xl
+      "
           />
         </div>
 
         {/* RIGHT FORM */}
-        <div className="bg-white  border-2 border-gray-200 shadow-2xl px-6 py-8 rounded-3xl w-full max-w-[500px] mx-auto ">
+        <div
+          className="
+      bg-white border border-gray-200 shadow-2xl 
+      px-5 sm:px-8 py-7 sm:py-8 
+      rounded-3xl w-full 
+      max-w-full sm:max-w-[500px] 
+      mx-auto
+    "
+        >
           {/* 2 COLUMN NAME */}
-          <div className="grid grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-sm font-semibold text-[#000000]">
+              <label className="text-sm font-semibold text-black">
                 First Name:
               </label>
               <input
                 type="text"
-                className="w-full mt-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-black"
+                className="w-full mt-1 p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-black"
               />
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-[#000000]">
+              <label className="text-sm font-semibold text-black">
                 Last Name:
               </label>
               <input
                 type="text"
-                className="w-full mt-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-black"
+                className="w-full mt-1 p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-black"
               />
             </div>
           </div>
 
           {/* EMAIL */}
           <div className="mt-4">
-            <label className="text-sm font-semibold text-[#000000]">
-              Email:
-            </label>
+            <label className="text-sm font-semibold text-black">Email:</label>
             <input
               type="email"
-              className="w-full mt-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-black"
+              className="w-full mt-1 p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-black"
             />
           </div>
 
           {/* PHONE */}
           <div className="mt-4">
-            <label className="text-sm font-semibold text-[#000000]">
+            <label className="text-sm font-semibold text-black">
               Phone No:
             </label>
             <input
               type="text"
-              className="w-full mt-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-black"
+              className="w-full mt-1 p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-black"
             />
           </div>
 
           {/* MESSAGE */}
           <div className="mt-4">
-            <label className="text-sm font-semibold text-[#000000]">
-              Message:
-            </label>
+            <label className="text-sm font-semibold text-black">Message:</label>
             <textarea
               rows="4"
-              className="w-full mt-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-black"
+              className="w-full mt-1 p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-black resize-none"
             ></textarea>
           </div>
 
           {/* SUBMIT BUTTON */}
-          <button className="mt-6 w-full bg-black text-white font-semibold py-3 rounded-lg hover:bg-gray-800 transition cursor-pointer">
+          <button className="mt-6 w-full bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition">
             Submit
           </button>
         </div>
