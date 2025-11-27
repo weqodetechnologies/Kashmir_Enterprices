@@ -34,9 +34,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-28 py-16 space-y-8">
+    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8 py-12 space-y-8">
       {/* Heading */}
-      <h1 className="text-left text-[42px] sm:text-[60px] md:text-[80px] font-black text-[#545353] tracking-[6px] leading-none">
+      <h1 className=" px-4 sm:px-8 md:px-12 lg:px-28 text-left text-[42px] sm:text-[60px] md:text-[80px] font-black text-[#545353] tracking-[6px] leading-none">
         TESTIMONIALS
       </h1>
 

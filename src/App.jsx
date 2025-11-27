@@ -6,8 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import FireLoader from "./components/ui/Loader";
+import ContactUs from "./pages/ContactUs";
 
-/* ✅ Route Loader Wrapper */
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
@@ -17,10 +17,10 @@ function AppContent() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200); // loader duration for every route change
+    }, 1200);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]); // ✅ runs on EVERY navigation
+  }, [location.pathname]);
 
   return (
     <>
@@ -33,6 +33,7 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </main>
           <Footer />

@@ -18,10 +18,10 @@ export default function Services() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-28 py-16 space-y-8">
+    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8 py-8 space-y-4">
       {/* HEADING */}
       <h1
-        className="text-left text-[42px] sm:text-[60px] md:text-[80px] lg:text-[100px] 
+        className="px-4 sm:px-8 md:px-12 lg:px-18 py-12 text-left text-[42px] sm:text-[40px] md:text-[60px] lg:text-[80px] 
                      font-black text-[#545353] tracking-[6px] leading-none"
       >
         SERVICES

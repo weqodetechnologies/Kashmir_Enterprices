@@ -10,7 +10,7 @@ export default function Hero() {
     h-[88vh]       
     sm:h-[75vh]
     md:h-[680px]
-    lg:h-[720px]
+    lg:h-[750px]
     flex items-center overflow-hidden
   "
     >

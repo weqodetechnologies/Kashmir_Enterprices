@@ -8,7 +8,7 @@ export default function HeroSection() {
         className="
       relative w-full max-w-7xl 
       rounded-[35px] overflow-hidden shadow-xl
-      h-[350px] sm:h-[450px] md:h-[550px] lg:h-[620px]
+      h-[350px] sm:h-[350px] md:h-[450px] lg:h-[550px]
     "
       >
         {/* BG IMAGE */}
