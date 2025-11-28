@@ -8,9 +8,9 @@ export default function Hero() {
       className="
     relative w-full 
     h-[88vh]       
-    sm:h-[75vh]
-    md:h-[680px]
-    lg:h-[750px]
+    sm:h-[90vh]
+    md:h-[780px]
+    lg:h-[850px]
     flex items-center overflow-hidden
   "
     >
@@ -35,7 +35,7 @@ export default function Hero() {
       >
         <div
           className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 text-white 
-               -mt-6 sm:-mt-10 md:-mt-14 lg:-mt-20"
+               -mt-6 sm:-mt-10 md:-mt-36  lg:-mt-40"
         >
           {/* MAIN HEADING */}
           <h1
@@ -44,16 +44,16 @@ export default function Hero() {
     sm:text-[80px] 
     md:text-[120px] 
     lg:text-[200px]
-    font-black leading-[0.95] tracking-[16px]
+    font-black leading-[0.65] tracking-[2px]
   "
           >
             <span
               className="   text-white
-    [mask-image:linear-gradient(to_bottom,black_60%,rgba(0,0,0,0)_66%,transparent_100%)] "
+    [mask-image:linear-gradient(to_bottom,black_60%,rgba(0,0,0,0)_75%,transparent_100%)] "
             >
-              K
+              KASHMIR
             </span>
-            <span
+            {/* <span
               className="   text-white
     [mask-image:linear-gradient(to_bottom,black_60%,rgba(0,0,0,0)_65%,transparent_100%)] "
             >
@@ -83,7 +83,7 @@ export default function Hero() {
      [mask-image:linear-gradient(to_bottom,black_25%,rgba(0,0,0,0)_40%,transparent_100%)] "
             >
               R
-            </span>
+            </span> */}
           </h1>
 
           <h2

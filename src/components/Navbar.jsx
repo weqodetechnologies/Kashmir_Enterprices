@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiChevronDown, FiMenu, FiX, FiPhone } from "react-icons/fi";
 import logo from "../assets/logo.png"; // your logo
 import Loader from "./ui/Loader";
+import Icon from "./ui/Icon";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,7 +139,7 @@ export default function Navbar() {
           href="tel:+919823000888"
           className="hidden lg:flex items-center gap-2 bg-[#F4B324] text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition"
         >
-          <FiPhone /> Call Us
+          <Icon name="phone" /> Call Us
         </a>
         {/* MOBILE MENU BUTTON */}
         <button

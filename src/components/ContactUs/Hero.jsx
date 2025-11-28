@@ -30,7 +30,7 @@ export default function ContactHero() {
           text-[40px] sm:text-[80px] md:text-[120px] lg:text-[160px]
           leading-[0.95]
         "
-            style={{ textShadow: "0 12px 30px rgba(0,0,0,0)" }}
+            style={{ textShadow: "0 12px 30px rgba(2,0,0,0)" }}
           >
             CONTACT US
           </h1>

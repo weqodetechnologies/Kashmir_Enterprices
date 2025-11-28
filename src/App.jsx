@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import FireLoader from "./components/ui/Loader";
 import ContactUs from "./pages/ContactUs";
+import InfraHero from "./pages/Services/Infrastructure";
+import CivilPage from "./pages/Services/CivilPage";
+import Minig from "./pages/Services/Minig";
 
 function AppContent() {
   const location = useLocation();
@@ -34,6 +37,9 @@ function AppContent() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/services/infrastructure" element={<InfraHero />} />
+              <Route path="services/civil" element={<CivilPage />} />
+              <Route path="/services/mining" element={<Minig />} />
             </Routes>
           </main>
           <Footer />
