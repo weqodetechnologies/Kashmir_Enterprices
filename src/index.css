@@ -20,3 +20,18 @@ body {
 .no-scrollbar {
   scrollbar-width: none;
 }
+
+.becker-font {
+  font-family: "Becker-Inline", sans-serif;
+}
+
+@font-face {
+  font-family: "BeckerInline";
+  src: url("./assets/fonts/Becker.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.heading-becker {
+  font-family: "BeckerInline", sans-serif;
+}

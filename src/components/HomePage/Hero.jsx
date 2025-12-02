@@ -197,7 +197,7 @@ export default function Hero() {
         src={slides[active].image}
         alt="hero"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1800ms] ease-in-out ${
-          fade ? "opacity-100" : "opacity-0"
+          fade ? "opacity-100" : "opacity-100"
         }`}
       />
 
@@ -207,8 +207,8 @@ export default function Hero() {
       {/*  HERO CONTENT */}
       <div
         className={`relative z-10 h-full flex flex-col justify-center 
-        px-4 sm:px-10 md:px-16 lg:px-24 
-        text-white transition-all duration-[1500ms] ease-in-out ${
+        px-4 sm:px-10 md:px-16 lg:px-28 
+        text-white transition-all duration-[1000ms] ease-in-out ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >

@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+         becker: ["BeckerInline", "sans-serif"],
       },
       colors: {
         primary: "#FCB716",

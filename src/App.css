@@ -62,3 +62,10 @@
   -webkit-text-stroke: 3px white;
   /* outlines text */
 }
+
+@font-face {
+  font-family: "Becker-Inline";
+  src: url("./assets/fonts/Becker-Inline.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

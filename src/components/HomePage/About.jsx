@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <section className="w-full flex flex-col items-center px-4 sm:px-6 md:px-10 lg:px-28 py-16 sm:py-20 lg:py-28 gap-8 sm:gap-10">
       {/* HEADING */}
-      <h1 className="self-start text-[32px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-black text-[#545353] tracking-[4px] sm:tracking-[6px] leading-tight">
+      <h1 className="self-start text-[32px] sm:text-[40px] md:text-[50px] lg:text-[80px] font-black text-[#545353] tracking-[4px] sm:tracking-[6px] leading-tight">
         ABOUT US
       </h1>
 
@@ -31,7 +31,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 lg:gap-8">
           {/* LEFT YELLOW BOX */}
           <div className="bg-[#FCB716] text-black p-5 sm:p-6 md:p-7 rounded-2xl space-y-3">
-            <button className="px-4 py-1 bg-black text-white rounded-full text-xs sm:text-sm md:text-base">
+            <button className="px-4 py-1 bg-black text-white rounded-full text-xs sm:text-sm md:text-base lg:text-lg">
               ● About us
             </button>
 
