@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Resortdata from "./Resortdata";
 
 export default function ResortProject() {
+  const formRef = useRef(null);
+  const firstInputRef = useRef(null);
+  useEffect(() => {
+    if (window.location.hash === "#resort") {
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth" });
+        firstInputRef.current?.focus();
+      }, 300);
+    }
+  }, []);
   return (
-    <section className="w-full bg-white py-12 px-4 sm:px-10 md:px-16 lg:px-28">
+    <section
+      ref={formRef}
+      id="resort"
+      className="w-full bg-white py-12 px-4 sm:px-10 md:px-16 lg:px-28"
+    >
       {/* HEADER */}
       <div className="max-w-6xl mx-auto mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black text-[#545353] mb-3  ">

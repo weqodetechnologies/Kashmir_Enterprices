@@ -1,7 +1,9 @@
 import React from "react";
 import bgImage from "../../assets//homePage/HeroSection.png";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section className="w-full flex justify-center px-4 sm:px-8 md:px-12 py-16">
       <div
@@ -33,21 +35,40 @@ export default function HeroSection() {
           </p>
 
           {/* BUTTONS */}
-          <div className="mt-8 flex gap-4">
+          {/* BUTTONS */}
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto items-center justify-center">
             <a
               href="/contact"
-              className="bg-[#F4B324] text-black font-bold px-10 py-4 rounded-full text-lg shadow-md transition-all duration-300 hover:bg-white hover:text:shadow-lg  cursor-pointer"
+              className="
+      bg-[#F4B324] text-black font-bold 
+      px-6 py-3 text-sm           /* ✅ Mobile size */
+      sm:px-10 sm:py-4 sm:text-lg /* ✅ Desktop size */
+      rounded-full shadow-md transition-all duration-300 
+      hover:bg-white hover:shadow-lg
+      cursor-pointer
+      w-[220px] sm:w-auto        /* ✅ Fixed mobile width */
+      text-center
+    "
+              onClick={() => navigate("/contact#inquiry-form")}
             >
               Contact Us
             </a>
 
             <a
-              href="/services"
-              className="px-10 py-4 rounded-full text-lg font-bold text-white 
-               bg-white/10 backdrop-blur-xl
-               border border-white/30 
-               shadow-md transition-all duration-300
-               hover:bg-white hover:text-black hover:border-white cursor-pointer"
+              className="
+      text-white font-bold 
+      px-6 py-3 text-sm           /* ✅ Mobile size */
+      sm:px-10 sm:py-4 sm:text-lg /* ✅ Desktop size */
+      rounded-full
+      bg-white/10 backdrop-blur-xl
+      border border-white/30 
+      shadow-md transition-all duration-300
+      hover:bg-white hover:text-black hover:border-white 
+      cursor-pointer
+      w-[220px] sm:w-auto        /* ✅ Fixed mobile width */
+      text-center
+    "
+              onClick={() => navigate("/services/infrastructure")}
             >
               Our Services
             </a>

@@ -23,11 +23,11 @@ function HeroMinig() {
       {/*  CONTENT WRAPPER */}
       <div className="relative z-10 w-full h-full px-4 sm:px-10 md:px-16 lg:px-28 flex flex-col justify-between">
         {/*  TOP TITLE */}
-        <div className="pt-16 sm:pt-14 md:pt-18 lg:pt-20 relative text-white  ">
+        <div className="pt-16 sm:pt-14 md:pt-18 lg:pt-30 relative text-white h-screen  ">
           <h1
             className="
               text-white font-black leading-44 text-end
-              text-[40px] sm:text-[80px] md:text-[120px] lg:text-[140px] 
+              text-[40px] sm:text-[80px] md:text-[120px] lg:text-[154px] 
              
             "
           >
@@ -35,18 +35,18 @@ function HeroMinig() {
           </h1>
           <h1
             className="
-              text-white font-black  text-end
-              text-[40px] sm:text-[48px] md:text-[54px] lg:text-[100px] mt-[-32px] mb-[146px]            
+              text-white font-black sm:leading-36 md:leading-36 text-end
+              text-[40px] sm:text-[80px] md:text-[86px] lg:text-[100px] mt-[-32px] mb-[146px]            
             "
           >
             WORKS
           </h1>
-          <div className=" max-w-5xl ">
+          <div className="absolute bottom-4 left-0 right-0 max-w-10xl mx-auto sm:text-center lg:text-center">
             <p
               className="
-              text-xs sm:text-sm md:text-base lg:text-lg 
-              text-gray-200 leading-relaxed 
-            "
+        text-xs sm:text-sm md:text-base lg:text-lg  
+        text-gray-200 leading-relaxed text-justify
+      "
             >
               Whether it’s mining, infrastructure, civil construction, or
               consultation, we’re here to support your project with reliable

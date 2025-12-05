@@ -10,7 +10,7 @@ export default function ContactUs() {
       <Hero />
       <ContactQuerySection />
       <FAQ />
-      <HeroSection />
+
     </div>
   );
 }

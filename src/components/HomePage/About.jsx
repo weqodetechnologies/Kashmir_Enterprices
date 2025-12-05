@@ -10,9 +10,9 @@ export default function AboutUs() {
   });
 
   return (
-    <section className="w-full flex flex-col items-center px-4 sm:px-6 md:px-10 lg:px-28 py-16 sm:py-20 lg:py-28 gap-8 sm:gap-10">
+    <section className="w-full flex flex-col items-center px-4 sm:px-6 md:px-10 lg:px-28 py-16 sm:py-6 md:py-8 lg:py-[100px] gap-8 sm:gap-10">
       {/* HEADING */}
-      <h1 className="self-start text-[32px] sm:text-[40px] md:text-[50px] lg:text-[80px] font-black text-[#545353] tracking-[4px] sm:tracking-[6px] leading-tight">
+      <h1 className="self-start text-[42px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-black text-[#545353] tracking-[4px] sm:tracking-[6px] leading-tight">
         ABOUT US
       </h1>
 

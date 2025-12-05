@@ -18,16 +18,17 @@ export default function Services() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8 py-8 space-y-4">
+    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-8 lg:py-[40px] space-y-12">
       {/* HEADING */}
       <h1
-        className="px-4 sm:px-8 md:px-12 lg:px-18 py-12 text-left text-[42px] sm:text-[40px] md:text-[60px] lg:text-[80px] 
+        className="px-4 sm:px-8 md:px-12 lg:px-20 text-left text-[42px] sm:text-[40px] md:text-[60px] lg:text-[80px] 
                      font-black text-[#545353] tracking-[6px] leading-none"
       >
         SERVICES
       </h1>
 
       {/* SLIDER WRAPPER */}
+
       <div className="relative ">
         {/* CARDS SCROLL ROW */}
         <div
@@ -83,7 +84,7 @@ export default function Services() {
               Mining Works
             </div>
 
-            <a href="/services/civil">
+            <a href="/services/mining">
               <button className="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full shadow-md">
                 <FiArrowUpRight size={20} />
               </button>
@@ -102,7 +103,7 @@ export default function Services() {
               Plantation
             </div>
 
-            <a href="/services/civil">
+            <a href="/services/plantation">
               <button className="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full shadow-md">
                 <FiArrowUpRight size={20} />
               </button>
@@ -120,7 +121,7 @@ export default function Services() {
               Resort Construction
             </div>
 
-            <a href="/services/civil">
+            <a href="/services/plantation#resort">
               <button className="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full shadow-md">
                 <FiArrowUpRight size={20} />
               </button>

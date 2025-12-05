@@ -2,7 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import user1 from "../../assets/homePage/Testimonial1.png";
 import user2 from "../../assets/homePage/Testimonial2.png";
-import user3 from "../../assets/homePage/Testimonial1.png";
+import user3 from "../../assets/homePage/testimonial3.png";
+import user4 from "../../assets/homePage/testimonial4.png";
+import user5 from "../../assets/homePage/testimonial5.png";
+
 import Icon from "../ui/Icon";
 
 export default function Testimonials() {
@@ -34,9 +37,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8 py-12 space-y-8">
+    <section className="w-full px-4 sm:px-4 md:px-6 lg:px-8  py-16 sm:py-6 md:py-8 lg:py-[100px] space-y-8">
       {/* Heading */}
-      <h1 className=" px-4 sm:px-8 md:px-12 lg:px-28 text-left text-[42px] sm:text-[60px] md:text-[80px] font-black text-[#545353] tracking-[6px] leading-none">
+      <h1 className=" px-4 sm:px-8 md:px-12 lg:px-20 text-left text-[42px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-black text-[#545353] tracking-[6px] leading-none">
         TESTIMONIALS
       </h1>
 
@@ -103,7 +106,7 @@ export default function Testimonials() {
           <div className="flex items-center gap-4 pt-4">
             <img src={user3} className="w-12 h-12 rounded-full object-cover" />
             <div>
-              <h4 className="font-semibold text-black">Amit Kumar</h4>
+              <h4 className="font-semibold text-black">Amit kumar</h4>
               <p className="text-sm text-gray-900">Project Head</p>
             </div>
           </div>
@@ -116,15 +119,15 @@ export default function Testimonials() {
           </div>
 
           <p className="text-black text-base leading-relaxed">
-            We trusted them with our home renovation, and the results were
-            beyond expectations. Highly recommended!
+            Their workmanship and site management were top-notch. The entire
+            process felt organized and stress-free.
           </p>
 
           <div className="flex items-center gap-4 pt-4">
-            <img src={user3} className="w-12 h-12 rounded-full object-cover" />
+            <img src={user4} className="w-12 h-12 rounded-full object-cover" />
             <div>
-              <h4 className="font-semibold text-black">Amit Kumar</h4>
-              <p className="text-sm text-gray-900">Project Head</p>
+              <h4 className="font-semibold text-black">Devika Rao</h4>
+              <p className="text-sm text-gray-900">Retail Store Owner</p>
             </div>
           </div>
         </div>
@@ -136,35 +139,15 @@ export default function Testimonials() {
           </div>
 
           <p className="text-black text-base leading-relaxed">
-            We trusted them with our home renovation, and the results were
-            beyond expectations. Highly recommended!
+            One of the best teams I’ve worked with. They understand design
+            intent perfectly and execute it flawlessly.
           </p>
 
           <div className="flex items-center gap-4 pt-4">
-            <img src={user3} className="w-12 h-12 rounded-full object-cover" />
+            <img src={user5} className="w-12 h-12 rounded-full object-cover" />
             <div>
-              <h4 className="font-semibold text-black">Amit Kumar</h4>
-              <p className="text-sm text-gray-900">Project Head</p>
-            </div>
-          </div>
-        </div>
-        {/* CARD 6 */}
-        <div className="bg-[#FCB716] min-w-[320px] sm:min-w-[380px] md:min-w-[420px] p-8 rounded-[30px] space-y-6">
-          <div className="text-4xl">
-            {" "}
-            <Icon name="comma" />
-          </div>
-
-          <p className="text-black text-base leading-relaxed">
-            We trusted them with our home renovation, and the results were
-            beyond expectations. Highly recommended!
-          </p>
-
-          <div className="flex items-center gap-4 pt-4">
-            <img src={user3} className="w-12 h-12 rounded-full object-cover" />
-            <div>
-              <h4 className="font-semibold text-black">Amit Kumar</h4>
-              <p className="text-sm text-gray-900">Project Head</p>
+              <h4 className="font-semibold text-black">Pooja Iyer</h4>
+              <p className="text-sm text-gray-900">Architect</p>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ import InfraHero from "./pages/Services/Infrastructure";
 import CivilPage from "./pages/Services/CivilPage";
 import Minig from "./pages/Services/Minig";
 import ResortPlantPage from "./pages/Services/ResortPlantPage";
+import Fountain from "./components/Fountain";
 
 function AppContent() {
   const location = useLocation();
@@ -43,6 +44,7 @@ function AppContent() {
               <Route path="/services/mining" element={<Minig />} />
               <Route path="services/plantation" element={<ResortPlantPage />} />
               <Route path="*" element={<div>404</div>} />
+              <Route path="/fountain" element={<Fountain />} />
             </Routes>
           </main>
           <Footer />

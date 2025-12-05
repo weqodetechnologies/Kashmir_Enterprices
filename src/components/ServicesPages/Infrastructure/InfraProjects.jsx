@@ -32,7 +32,7 @@ export default function Infrastructure() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-[220px] sm:h-[280px] lg:h-[300px] rounded-2xl object-cover"
+                  className="w-full h-[380px] sm:h-[370px] lg:h-[300px] rounded-2xl object-cover"
                 />
               </div>
 

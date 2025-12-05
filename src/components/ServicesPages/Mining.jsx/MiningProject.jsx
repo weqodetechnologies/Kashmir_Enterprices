@@ -32,7 +32,12 @@ export default function MiningProjects() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-[220px] sm:h-[280px] lg:h-[300px] rounded-2xl object-cover"
+                  className="
+      w-full 
+      h-[240px] sm:h-[340px] lg:h-[300px]
+      rounded-2xl
+      object-cover
+    "
                 />
               </div>
 

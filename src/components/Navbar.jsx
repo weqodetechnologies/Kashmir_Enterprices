@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="bg-white shadow-md mx-3 sm:mx-6 md:mx-10 lg:mx-20 mt-4 rounded-full px-4 py-3 flex items-center justify-between">
+      <nav className="bg-white shadow-md mx-1 sm:mx-1 md:mx-10 lg:mx-20 mt-4 rounded-full px-4 py-3 flex items-center justify-between">
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
