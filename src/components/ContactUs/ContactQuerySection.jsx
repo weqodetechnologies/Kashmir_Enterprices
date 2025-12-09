@@ -83,8 +83,17 @@ export default function ContactQuerySection() {
                     <Icon name="location" className="text-[#F4B324]" />
                   </div>
                   <p className="text-sm leading-relaxed">
-                    <span className="font-semibold">Office Add:</span> Glory
+                    <span className="font-semibold">Office :</span> 101,Glory
                     Homes, Gorewada Ring Rd, Nagpur
+                  </p>
+                </div>
+                <div className="flex items-start gap-4 mb-1">
+                  <div className="w-5 h-5 shrink-0 mt-1">
+                    <Icon name="location" className="text-[#F4B324]" />
+                  </div>
+                  <p className="text-sm leading-relaxed">
+                    <span className="font-semibold">Office :</span> 10 A Gandhi
+                    Nagar Hill road, Nagpur 440010
                   </p>
                 </div>
               </div>

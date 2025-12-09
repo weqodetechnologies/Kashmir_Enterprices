@@ -183,7 +183,7 @@ export default function Footer() {
                 size={20}
                 className="text-yellow-400 mt-1 flex-shrink-0"
               />
-              <p>Glory Homes, Gorewada Ring Rd, Nagpur.</p>
+              <p>101,Glory Homes, Gorewada Ring Rd, Nagpur.</p>
             </div>
 
             <div className="flex items-start gap-3 justify-center sm:justify-start">
@@ -192,7 +192,7 @@ export default function Footer() {
                 size={20}
                 className="text-yellow-400 mt-1 flex-shrink-0"
               />
-              <p>10 A Gandhi Nagar Hill road, Nagpur</p>
+              <p>10 A Gandhi Nagar Hill road, Nagpur 440010</p>
             </div>
 
             <div className="flex items-start gap-3 justify-center sm:justify-start">
