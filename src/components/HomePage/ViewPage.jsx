@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function HeroSection() {
   const navigate = useNavigate();
   return (
-    <section className="w-full flex justify-center px-4 sm:px-8 md:px-12 py-16">
+    <section className="w-full flex justify-center px-4 sm:px-8 md:px-12 py-8 mb-10">
       <div
         className="
       relative w-full max-w-7xl 

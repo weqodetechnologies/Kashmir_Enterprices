@@ -13,17 +13,15 @@ import Minig from "./pages/Services/Minig";
 import ResortPlantPage from "./pages/Services/ResortPlantPage";
 import Fountain from "./components/Fountain";
 
+import AutoPopupTrigger from "./components/AutoPopupTrigger"; // ✅ CORRECT
+
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1200);
-
+    const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
@@ -34,6 +32,7 @@ function AppContent() {
       {!loading && (
         <div className="flex flex-col min-h-screen">
           <Navbar />
+
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -43,10 +42,14 @@ function AppContent() {
               <Route path="services/civil" element={<CivilPage />} />
               <Route path="/services/mining" element={<Minig />} />
               <Route path="services/plantation" element={<ResortPlantPage />} />
-              <Route path="*" element={<div>404</div>} />
               <Route path="/fountain" element={<Fountain />} />
+              <Route path="*" element={<div>404</div>} />
             </Routes>
           </main>
+
+          {/* ✅ AUTO 5 SECOND POPUP */}
+          <AutoPopupTrigger />
+
           <Footer />
         </div>
       )}

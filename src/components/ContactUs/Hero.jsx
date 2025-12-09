@@ -22,8 +22,8 @@ export default function ContactHero() {
 
       {/*  CONTENT WRAPPER */}
       <div className="relative z-10 w-full h-full px-4 sm:px-10 md:px-16 lg:px-28 flex flex-col justify-between">
-        {/* 🔥 TOP TITLE */}
-        <div className="pt-16 sm:pt-20 md:pt-28 lg:pt-20 lg:pt-20 lg:px-10 relative text-white font-black ">
+        {/*  TOP TITLE */}
+        <div className="pt-20 sm:pt-30 md:pt-28 lg:pt-20 lg:pt-20 lg:px-10 relative text-white font-black ">
           <h1
             className="
           text-white font-black tracking-widest

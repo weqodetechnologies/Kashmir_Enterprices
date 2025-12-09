@@ -32,7 +32,18 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="bg-white shadow-md mx-1 sm:mx-1 md:mx-10 lg:mx-20 mt-4 rounded-full px-4 py-3 flex items-center justify-between">
+      <nav
+        className="
+      bg-white shadow-md
+      w-full
+      lg:max-w-7xl lg:mx-auto
+      mt-0 lg:mt-4
+      rounded-none lg:rounded-full
+      px-4 py-3
+      flex items-center justify-between
+      overflow-visible
+    "
+      >
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
@@ -134,7 +145,14 @@ export default function Navbar() {
 
       {/*  MOBILE MENU */}
       {menuOpen && (
-        <div className="lg:hidden bg-white shadow-md px-6 py-6 space-y-4 text-center rounded-b-2xl">
+        <div
+          className="lg:hidden bg-white shadow-md 
+px-6 py-6 
+space-y-4 
+text-center 
+rounded-none 
+border-t"
+        >
           <NavLink
             to="/"
             onClick={closeAll}

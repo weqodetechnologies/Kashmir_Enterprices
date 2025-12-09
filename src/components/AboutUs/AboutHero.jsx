@@ -17,7 +17,7 @@ export default function AboutHero() {
           relative w-full 
           h-[50vh] sm:h-[30vh] md:h-[65vh] lg:h-[80vh]
           flex items-end justify-end px-5 sm:px-10 md:px-14 lg:px-20
-    pb-6 sm:pb-10 md:pb-12 lg:pb-1 mb-[80px]
+    pb-6 sm:pb-10 md:pb-12 lg:pb-1 mb-[40px] sm:mb-[60px] md:mb-[80px] lg:mb-[100px] 
         "
       >
         {/* Background Image */}
@@ -47,12 +47,12 @@ export default function AboutHero() {
           className="
       bg-black text-white 
       rounded-2xl shadow-xl
-      grid grid-cols-2 md:grid-cols-4   /* ✅ 2 on mobile, 4 on desktop */
+      grid grid-cols-2 md:grid-cols-4  
       gap-6 sm:gap-8
       px-5 sm:px-8
-      py-8 sm:py-12 md:py-16
+      py-4 sm:py-4 md:py-12
       max-w-7xl w-full
-      mb-[80px]
+      mb-[40px] sm:mb-[40px] md:mb-[80px] lg:mb-[100px]
     "
         >
           {/* 1 */}
@@ -100,7 +100,7 @@ export default function AboutHero() {
       {/* ================= CONTENT SECTION ================= */}
       <div
         className="
-          w-full px-4 sm:px-8 md:px-12 lg:px-28 py-16 space-y-8
+          w-full px-4 sm:px-8 md:px-12 lg:px-28 py-8 space-y-8
           grid grid-cols-1 lg:grid-cols-2 
           items-center
         "

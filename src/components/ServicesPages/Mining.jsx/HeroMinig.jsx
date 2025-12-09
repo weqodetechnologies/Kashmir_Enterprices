@@ -23,11 +23,11 @@ function HeroMinig() {
       {/*  CONTENT WRAPPER */}
       <div className="relative z-10 w-full h-full px-4 sm:px-10 md:px-16 lg:px-28 flex flex-col justify-between">
         {/*  TOP TITLE */}
-        <div className="pt-16 sm:pt-14 md:pt-18 lg:pt-30 relative text-white h-screen  ">
+        <div className="pt-4 sm:pt-2 md:pt-18 lg:pt-30 relative text-white h-screen  ">
           <h1
             className="
               text-white font-black leading-44 text-end
-              text-[40px] sm:text-[80px] md:text-[120px] lg:text-[154px] 
+              text-[50px] sm:text-[100px] md:text-[120px] lg:text-[154px] 
              
             "
           >
@@ -35,8 +35,8 @@ function HeroMinig() {
           </h1>
           <h1
             className="
-              text-white font-black sm:leading-36 md:leading-36 text-end
-              text-[40px] sm:text-[80px] md:text-[86px] lg:text-[100px] mt-[-32px] mb-[146px]            
+              text-white font-black leading-8 md:leading-40  text-end
+              text-[40px] sm:text-[80px] md:text-[86px] lg:text-[100px] mt-[-52px] mb-[146px]            
             "
           >
             WORKS

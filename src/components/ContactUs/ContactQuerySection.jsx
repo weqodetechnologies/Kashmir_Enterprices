@@ -50,7 +50,7 @@ export default function ContactQuerySection() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-24 py-20">
+    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-36 py-20">
       <div className="relative w-full rounded-[28px] overflow-hidden shadow-2xl min-h-[500px]">
         <img
           src={bg}
@@ -111,7 +111,7 @@ export default function ContactQuerySection() {
             </div>
           </div>
 
-          {/* ✅ RIGHT FORM (EMAILJS CONNECTED) */}
+          {/*  RIGHT FORM (EMAILJS CONNECTED) */}
           <div
             ref={formRef}
             id="inquiry-form"
@@ -161,7 +161,7 @@ export default function ContactQuerySection() {
                 className="w-full border rounded-full px-4 py-2 text-sm"
               />
 
-              {/* ✅ SERVICE SELECTION */}
+              {/*  SERVICE SELECTION */}
               <input type="hidden" name="service" value={selectedService} />
 
               <div>

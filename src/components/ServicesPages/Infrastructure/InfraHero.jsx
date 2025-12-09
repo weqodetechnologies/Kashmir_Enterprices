@@ -23,11 +23,11 @@ function InfraHero() {
       {/*  CONTENT WRAPPER */}
       <div className="relative z-10 w-full h-full px-4 sm:px-10 md:px-16 lg:px-28 flex flex-col justify-between">
         {/*  TOP TITLE */}
-        <div className="pt-16 sm:pt-14 md:pt-18 lg:pt-20 relative text-white  ">
+        <div className="pt-24 sm:pt-20 md:pt-18  lg:pt-30 relative text-white  ">
           <h1
             className="
-              text-white font-black leading-44
-              text-[40px] sm:text-[80px] md:text-[120px] lg:text-[140px] 
+              text-white font-black 
+              text-[28px] sm:text-[28px] md:text-[120px] lg:text-[140px] 
              
             "
           >
@@ -36,7 +36,7 @@ function InfraHero() {
           <h1
             className="
               text-white font-black 
-              text-[40px] sm:text-[48px] md:text-[54px] lg:text-[60px] mt-[-32px] mb-4            
+              text-[26px] sm:text-[26px] md:text-[54px] lg:text-[60px]  
             "
           >
             & CONSULTATION SERVICES
@@ -45,13 +45,13 @@ function InfraHero() {
             <p
               className="
               text-xs sm:text-sm md:text-base lg:text-lg 
-              text-gray-200 leading-relaxed
+              text-gray-200 leading-relaxed mt-20 sm:mt-2
             "
             >
               Whether it’s mining, infrastructure, civil construction, or
               consultation, we’re here to support your project with reliable
               expertise and on-ground experience. Reach out to us for inquiries,
-              partnerships, quotations, or project discussions — our team will
+              partnerships, quotations, or project discussions, our team will
               get back to you quickly.
             </p>
           </div>

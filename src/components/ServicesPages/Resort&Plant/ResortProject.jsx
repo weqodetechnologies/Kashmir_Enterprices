@@ -19,7 +19,7 @@ export default function ResortProject() {
       className="w-full bg-white py-12 px-4 sm:px-10 md:px-16 lg:px-28"
     >
       {/* HEADER */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <div className="max-w-6xl mx-auto mb-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black text-[#545353] mb-3  ">
           RESORT & FARMHOUSE
         </h2>

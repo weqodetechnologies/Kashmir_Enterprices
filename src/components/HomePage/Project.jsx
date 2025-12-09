@@ -48,7 +48,7 @@ export default function Projects() {
             {/* IMAGE */}
             <img
               src={project1}
-              className="w-full h-[180px] sm:h-[180px] md:h-[200px] lg:h-[250px]  object-cover"
+              className="w-full h-[180px] sm:h-[180px] md:h-[200px] lg:h-[250px]  object-fill sm:object-cover "
             />
 
             {/* CONTENT */}
@@ -63,9 +63,9 @@ export default function Projects() {
                 facilities.
               </p>
 
-              <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+              {/* <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
                 View Project <FiArrowRight size={18} />
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -88,10 +88,10 @@ export default function Projects() {
                 vibe that people really love. It’s the kind of locality you get
                 a mix of old.
               </p>
-
+              {/* 
               <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
                 View Project <FiArrowRight size={18} />
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -109,12 +109,12 @@ export default function Projects() {
 
               <p className="text-sm leading-relaxed text-gray-300 font-regular">
                 Iron ore mining involves locating ore deposits, extracting the
-                rock, and processing it to improve iron content.
+                rock, and processing it efficiently to improve iron content.
               </p>
 
-              <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+              {/* <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
                 View Project <FiArrowRight size={18} />
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -136,9 +136,9 @@ export default function Projects() {
                 more pleasant.
               </p>
 
-              <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+              {/* <button className="flex items-center justify-center gap-2 bg-[#FFC727] text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">
                 View Project <FiArrowRight size={18} />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

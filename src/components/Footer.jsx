@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo3.png";
 import Icon from "./ui/Icon";
 import { FiChevronDown } from "react-icons/fi";
@@ -8,6 +8,8 @@ export default function Footer() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const location = useLocation();
+  const isServiceActive = location.pathname.startsWith("/services");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -19,17 +21,17 @@ export default function Footer() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ Active Nav Style
+  //  Active Nav Style
   const activeClass = ({ isActive }) =>
     isActive
       ? "text-yellow-400 font-semibold"
       : "hover:text-yellow-400 transition";
 
-  // ✅ Services dropdown data
+  //  Services dropdown data
   const services = [
     { to: "/services/infrastructure", label: "Infrastructure" },
     { to: "/services/civil", label: "Civil" },
-    { to: "/services/plantation-resort", label: "Plantation & Resort" },
+    { to: "/services/plantation", label: "Plantation & Resort" },
     { to: "/services/mining", label: "Mining" },
   ];
 
@@ -37,7 +39,7 @@ export default function Footer() {
     <footer className="w-full bg-black text-white px-4 sm:px-8 md:px-12 lg:px-24 py-12">
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
-        {/* ✅ COLUMN 1 : LOGO + ABOUT */}
+        {/*  COLUMN 1 : LOGO + ABOUT */}
         <div className="space-y-5 flex flex-col items-center sm:items-start">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <img
@@ -55,7 +57,7 @@ export default function Footer() {
             moves raw materials with reliable expertise.
           </p>
 
-          {/* ✅ EMAIL INPUT */}
+          {/*  EMAIL INPUT */}
           <div className="flex items-center bg-white rounded-full overflow-hidden w-full max-w-[200px] sm:max-w-[220px] md:max-w-[300px] mt-4">
             <input
               type="email"
@@ -72,7 +74,7 @@ export default function Footer() {
             </button>
           </div>
 
-          {/* ✅ SOCIAL ICONS */}
+          {/*  SOCIAL ICONS */}
           <div className="flex items-center justify-center sm:justify-start gap-4 pt-4 flex-wrap">
             {[
               { name: "instagram", link: "https://www.instagram.com/" },
@@ -97,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ✅ COLUMN 2 : QUICK LINKS WITH RESPONSIVE SERVICES DROPDOWN */}
+        {/*  COLUMN 2 : QUICK LINKS WITH RESPONSIVE SERVICES DROPDOWN */}
         <div className="sm:ml-10">
           <h3 className="text-lg sm:text-2xl font-semibold text-yellow-400 mb-4">
             Quick Links
@@ -116,13 +118,18 @@ export default function Footer() {
               </NavLink>
             </li>
 
-            {/* ✅ RESPONSIVE SERVICES DROPDOWN */}
+            {/* RESPONSIVE SERVICES DROPDOWN */}
             <li>
-              <div ref={dropdownRef} className="relative">
-                {/* ✅ SERVICES BUTTON - PERFECT RESPONSIVE STYLING */}
+              <div ref={dropdownRef} className="relative cursor-pointer">
                 <button
                   onClick={() => setOpen(!open)}
-                  className="w-full flex items-center justify-center sm:justify-start gap-2 font-semibold text-yellow-400 hover:text-yellow-500 transition text-left py-1"
+                  className={`w-full flex items-center justify-center sm:justify-start gap-2 
+    font-semibold transition
+    ${
+      open || isServiceActive
+        ? "text-[#FCB716] "
+        : "text-gray-300 hover:text-[#FCB716]"
+    }`}
                 >
                   Services
                   <FiChevronDown
@@ -132,28 +139,26 @@ export default function Footer() {
                   />
                 </button>
 
-                {/* ✅ RESPONSIVE DROPDOWN - MATCHES UI PERFECTLY */}
-                <div
-                  className={`absolute bottom-full sm:top-full left-0 sm:left-auto sm:right-0 w-full sm:w-[240px] 
-                    bg-white rounded-2xl shadow-xl overflow-hidden z-50 border border-gray-200
-                    sm:mt-4 mt-2 sm:origin-top origin-bottom transform transition-all duration-200
-                    ${
-                      open
-                        ? "scale-100 opacity-100 translate-y-0"
-                        : "scale-95 opacity-0 -translate-y-2 sm:translate-y-0 pointer-events-none"
-                    }`}
-                >
-                  {services.map((service, index) => (
-                    <NavLink
-                      key={service.to}
-                      to={service.to}
-                      onClick={() => setOpen(false)}
-                      className="block px-4 sm:px-6 py-3 sm:py-4 text-gray-800 hover:bg-gray-100 font-medium text-sm sm:text-base border-b border-gray-100 last:border-b-0 first:rounded-t-2xl last:rounded-b-2xl transition-colors hover:text-gray-900"
-                    >
-                      {service.label}
-                    </NavLink>
-                  ))}
-                </div>
+                {/* INLINE SERVICES LIST - NO BOX UI */}
+                {open && (
+                  <ul className="mt-2 ml-4 space-y-2">
+                    {services.map((service) => (
+                      <li key={service.to}>
+                        <NavLink
+                          to={service.to}
+                          onClick={() => setOpen(false)}
+                          className={({ isActive }) =>
+                            isActive
+                              ? "text-yellow-400 font-semibold "
+                              : "text-gray-300 hover:text-yellow-400 transition"
+                          }
+                        >
+                          {service.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
 
@@ -165,7 +170,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ✅ COLUMN 3 : CONTACT INFO */}
+        {/*  COLUMN 3 : CONTACT INFO */}
         <div>
           <h3 className="text-lg sm:text-xl font-semibold text-yellow-400 mb-4">
             Contact Information
@@ -211,7 +216,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ✅ COPYRIGHT */}
+      {/* COPYRIGHT */}
       <div className="text-center text-gray-400 text-xs sm:text-sm mt-10 pt-8 border-t border-gray-800">
         © {new Date().getFullYear()} Kashmir Enterprises. All rights reserved.
       </div>

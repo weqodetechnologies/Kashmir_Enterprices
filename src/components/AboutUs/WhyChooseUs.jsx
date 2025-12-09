@@ -3,7 +3,7 @@ import Icon from "../ui/Icon";
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-28 py-10">
+    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-28 py-8">
       {/* SECTION TITLE */}
       <h2 className="text-[28px] sm:text-[34px] md:text-[44px] lg:text-[56px] font-black text-[#545353] mb-8">
         WHY CHOOSE US
