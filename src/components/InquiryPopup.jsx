@@ -16,7 +16,7 @@ export default function InquiryPopup({ isOpen, onClose }) {
       return;
     }
 
-    // ✅ ADMIN MAIL
+    //  ADMIN MAIL
     emailjs.sendForm(
       "service_f10taox",
       "template_uvfw606",
@@ -24,7 +24,7 @@ export default function InquiryPopup({ isOpen, onClose }) {
       "m-h4-c3W3yeJdpBBl"
     );
 
-    // ✅ USER CONFIRMATION MAIL
+    //  USER CONFIRMATION MAIL
     emailjs.sendForm(
       "service_f10taox",
       "template_6yn383s",
@@ -34,6 +34,8 @@ export default function InquiryPopup({ isOpen, onClose }) {
 
     e.target.reset();
     setSelectedService("");
+    localStorage.setItem("enquiryFormSubmitted", "yes");
+
     alert("Message sent successfully!");
     onClose();
   };
@@ -41,7 +43,7 @@ export default function InquiryPopup({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center px-4">
       <div className="bg-white rounded-[24px] p-6 w-full max-w-md relative animate-scaleIn">
-        {/* ❌ CLOSE BUTTON */}
+        {/*  CLOSE BUTTON */}
         <button
           onClick={onClose}
           className="absolute top-3 right-4 text-xl font-bold"

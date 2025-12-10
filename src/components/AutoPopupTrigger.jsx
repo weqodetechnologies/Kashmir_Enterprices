@@ -7,10 +7,9 @@ export default function AutoPopupTrigger() {
   const idleTimer = useRef(null);
 
   useEffect(() => {
-    console.log("✅ AutoPopupTrigger Mounted");
+    console.log(" AutoPopupTrigger Mounted");
 
-    //  TEMP: localStorage block hata diya (testing ke liye)
-    localStorage.removeItem("enquiryPopupShown");
+    if (localStorage.getItem("enquiryFormSubmitted")) return;
 
     const startIdleTimer = () => {
       if (idleTimer.current) {
@@ -18,7 +17,7 @@ export default function AutoPopupTrigger() {
       }
 
       idleTimer.current = setTimeout(() => {
-        console.log("✅ USER IDLE → OPENING POPUP");
+        console.log("USER IDLE → OPENING POPUP");
         setShowPopup(true);
         localStorage.setItem("enquiryPopupShown", "yes");
       }, 5000); //5 second idle
